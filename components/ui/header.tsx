@@ -6,7 +6,10 @@ import { BoxArrowUpRight } from "react-bootstrap-icons";
 export default function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30 w-full">
-      <div className="container max-w-6xl mx-auto text-white font-bold flex justify-between">
+      <div className="container max-w-6xl mx-auto text-white font-bold flex text-lg justify-center">
+        <div>
+          <Image className="pt-3 w-[80px] pr-4" src={HeroLogo} alt="麻理盃" />
+        </div>
         <div>
           <Link
             className="inline-block px-4 py-4 hover:text-amber-500 hover:underline underline-offset-4"
@@ -45,9 +48,6 @@ export default function Header() {
           >
             聯絡麻雀理工 <BoxArrowUpRight className="inline" />
           </Link>
-        </div>
-        <div>
-          <Image className="pt-3 w-[80px] pr-4" src={HeroLogo} alt="麻理盃" />
         </div>
       </div>
     </header>

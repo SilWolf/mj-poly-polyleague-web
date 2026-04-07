@@ -15,31 +15,24 @@ export default function Home() {
     <>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
-        <div className="py-12 md:py-20 text-white text-center space-y-4">
-          {/* Section header */}
-          <div className="text-center" data-aos="fade-up">
-            <Image
-              className="w-[520px] mx-auto"
-              src={HeroLogo}
-              width={1355}
-              height={676}
-              alt="麻理盃"
-            />
-          </div>
-          <h1 className="text-5xl font-semibold" data-aos="fade-up">
-            麻理盃
-          </h1>
-          <div
-            className="mx-auto max-w-3xl"
-            data-aos="fade-up"
-            data-aos-delay={200}
-          >
+        <div className="px-12 pt-12 pb-20 text-white text-center space-y-2">
+          <div className="mx-auto max-w-3xl" data-aos="fade-up">
             <Image
               className="w-[200px] mx-auto"
               src={Logo}
               width={2000}
               height={749}
               alt="麻雀理工"
+            />
+          </div>
+
+          <div className="text-center" data-aos="fade-up" data-aos-delay={200}>
+            <Image
+              className="w-[520px] mx-auto"
+              src={HeroLogo}
+              width={1355}
+              height={676}
+              alt="麻理盃"
             />
           </div>
         </div>

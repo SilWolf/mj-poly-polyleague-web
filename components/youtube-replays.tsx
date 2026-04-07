@@ -44,25 +44,28 @@ export default async function YoutubeReplays() {
         data-aos="fade-up"
       />
       <div className="relative container max-w-6xl mx-auto z-10">
-        <h3 className="text-6xl font-bold text-[#ff9247] mb-8 text-right">
+        <h3 className="text-6xl font-bold text-[#ff9247] mb-8 text-left pl-18">
           精華重溫
         </h3>
-        <div className="flex snap-x snap-mandatory overflow-x-auto max-w-full gap-x-4">
-          {replays.map((replay) => (
-            <a
-              key={replay.videoId}
-              className="block snap-start w-80 shrink-0 bg-[#fdd621]"
-              href={replay.href}
-              target="_blank"
-            >
-              <img
-                src={replay.thumbnail}
-                alt={replay.title}
-                className="rounded-2xl border-4 border-amber-500"
-              />
-              <h6 className="font-bold">{replay.title}</h6>
-            </a>
-          ))}
+        <div className="pl-24">
+          <div className="flex snap-x snap-mandatory overflow-x-auto max-w-full gap-x-4">
+            <div className="snap-start shrink-0"></div>
+            {replays.map((replay) => (
+              <a
+                key={replay.videoId}
+                className="block snap-start w-80 shrink-0 bg-[#fdd621]"
+                href={replay.href}
+                target="_blank"
+              >
+                <img
+                  src={replay.thumbnail}
+                  alt={replay.title}
+                  className="rounded-2xl border-4 border-amber-500"
+                />
+                <h6 className="font-bold">{replay.title}</h6>
+              </a>
+            ))}
+          </div>
         </div>
         <div className="pt-4">
           <a

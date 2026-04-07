@@ -22,6 +22,8 @@ export default function Footer() {
               <span>Whataspp: </span>
               <span>51143454</span>
             </div>
+          </div>
+          <div className="flex items-center gap-12">
             <div className="flex gap-x-2 items-center">
               <Instagram />
               <span>IG: </span>
