@@ -4,11 +4,13 @@ export const metadata = {
 };
 
 import Leaderboard from "@/components/leaderboard";
+import YoutubeReplays from "@/components/youtube-replays";
 
 export default function Home() {
   return (
     <>
       <Leaderboard />
+      <YoutubeReplays />
     </>
   );
 }

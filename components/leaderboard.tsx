@@ -32,13 +32,13 @@ const players = [
 ];
 
 const defaultRankingBulletStyle: CSSProperties = {
-  // background: "oklch(76.9% 0.188 70.08)",
-  color: "oklch(76.9% 0.188 70.08)",
+  // background: "#ff9247",
+  color: "#ff9247",
 };
 
 const rankingBulletStyleMap: Record<number, CSSProperties> = {
   1: {
-    background: "oklch(76.9% 0.188 70.08)",
+    background: "#ff9247",
     color: "#FFF",
   },
   2: {
@@ -46,14 +46,14 @@ const rankingBulletStyleMap: Record<number, CSSProperties> = {
     color: "#FFF",
   },
   3: {
-    background: "#f7a36a",
+    background: "#ff9247",
     color: "#FFF",
   },
 };
 
 export default function Leaderboard() {
   return (
-    <section>
+    <section className="mb-24">
       <div className="mx-auto max-w-6xl">
         <div className="relative z-20 h-full overflow-hidden rounded-4xl bg-white shadow-xl px-4">
           <div className="p-8 text-2xl columns-2 gap-x-24">
