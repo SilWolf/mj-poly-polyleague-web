@@ -68,3 +68,5 @@ export default async function Replays() {
     </>
   );
 }
+
+export const revalidate = 3600;
