@@ -13,7 +13,7 @@ export default async function YoutubeReplays() {
             snippet: {
               title: string;
               thumbnails: {
-                standard: {
+                medium: {
                   url: string;
                 };
               };
@@ -28,7 +28,7 @@ export default async function YoutubeReplays() {
     .then((res) =>
       res.items.map((item) => ({
         title: item.snippet.title,
-        thumbnail: item.snippet.thumbnails.standard.url,
+        thumbnail: item.snippet.thumbnails.medium.url,
         videoId: item.snippet.resourceId.videoId,
         href: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}&list=PLVFu6tO99GH7MipGlQ7cptmKBNvCmINeF`,
       })),
@@ -50,6 +50,7 @@ export default async function YoutubeReplays() {
         <div className="flex snap-x snap-mandatory overflow-x-auto max-w-full gap-x-4">
           {replays.map((replay) => (
             <a
+              key={replay.videoId}
               className="block snap-start w-80 shrink-0 bg-[#fdd621]"
               href={replay.href}
               target="_blank"
