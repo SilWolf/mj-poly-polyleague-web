@@ -77,3 +77,5 @@ export default async function YoutubeReplays() {
     </section>
   );
 }
+
+export const revalidate = 60 * 60;
