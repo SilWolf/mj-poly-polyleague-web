@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
-        <div className="px-12 pt-12 pb-20 text-white text-center space-y-2">
+        <div className="px-4 md:px-12 pt-12 pb-20 text-white text-center space-y-2">
           <div className="mx-auto max-w-3xl" data-aos="fade-up">
             <Image
               className="w-[200px] mx-auto"

@@ -35,19 +35,38 @@ export default async function YoutubeReplays() {
     );
 
   return (
-    <section className="bg-[#fdd621] relative pt-8 h-[500px]">
+    <section className="bg-[#fdd621] relative pb-4 pt-8 md:h-[500px]">
       <Image
         src={YoutubeReplay}
         height={480}
         alt=""
-        className="absolute bottom-0 left-0"
+        className="absolute bottom-0 left-0 hidden md:block"
         data-aos="fade-up"
       />
       <div className="relative container max-w-6xl mx-auto z-10">
         <h3 className="text-6xl font-bold text-[#ff9247] mb-8 text-left pl-18">
           精華重溫
         </h3>
-        <div className="pl-24">
+
+        <div className="px-4 space-y-4 block md:hidden">
+          {replays.slice(0, 3).map((replay) => (
+            <a
+              key={replay.videoId}
+              className="block "
+              href={replay.href}
+              target="_blank"
+            >
+              <img
+                src={replay.thumbnail}
+                alt={replay.title}
+                className="rounded-2xl border-4 border-amber-500 w-full"
+              />
+              <h6 className="font-bold">{replay.title}</h6>
+            </a>
+          ))}
+        </div>
+
+        <div className="pl-24 hidden md:block">
           <div className="flex snap-x snap-mandatory overflow-x-auto max-w-full gap-x-4">
             <div className="snap-start shrink-0"></div>
             {replays.map((replay) => (
@@ -67,9 +86,10 @@ export default async function YoutubeReplays() {
             ))}
           </div>
         </div>
-        <div className="pt-4">
+
+        <div className="pt-4 px-4 flex justify-center md:justify-end">
           <a
-            className="flex justify-end items-center gap-x-2 text-2xl text-[#FF0033] hover:underline underline-offset-4"
+            className="flex items-center gap-x-2 text-2xl text-[#FF0033] hover:underline underline-offset-4"
             href="https://www.youtube.com/playlist?list=PLVFu6tO99GH7MipGlQ7cptmKBNvCmINeF"
             target="_blank"
           >

@@ -5,7 +5,7 @@ import { Discord, Instagram, Whatsapp } from "react-bootstrap-icons";
 export default function Footer() {
   return (
     <footer>
-      <div className="container max-w-6xl mx-auto flex items-center py-12 gap-x-12 text-xl">
+      <div className="container max-w-6xl mx-auto flex flex-col md:flex-row items-center py-12 gap-x-12 gap-y-6 text-xl">
         <div>
           <Image
             className="w-[200px] mx-auto"
@@ -16,26 +16,20 @@ export default function Footer() {
           />
         </div>
         <div className="flex-1">
-          <div className="flex items-center gap-12">
-            <div className="flex gap-x-2 items-center">
-              <Whatsapp />
-              <span>Whataspp: </span>
-              <span>51143454</span>
-            </div>
+          <div className="flex gap-x-2 items-center">
+            <Whatsapp />
+            <span>Whataspp: </span>
+            <span>51143454</span>
           </div>
-          <div className="flex items-center gap-12">
-            <div className="flex gap-x-2 items-center">
-              <Instagram />
-              <span>IG: </span>
-              <span>Mahjong.poly</span>
-            </div>
+          <div className="flex gap-x-2 items-center">
+            <Instagram />
+            <span>IG: </span>
+            <span>Mahjong.poly</span>
           </div>
-          <div className="flex items-center gap-12">
-            <div className="flex gap-x-2 items-center">
-              <Discord />
-              <span>Discord: </span>
-              <span>@Mahjong.poly</span>
-            </div>
+          <div className="flex gap-x-2 items-center">
+            <Discord />
+            <span>Discord: </span>
+            <span>@Mahjong.poly</span>
           </div>
         </div>
       </div>

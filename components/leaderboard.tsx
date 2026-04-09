@@ -55,13 +55,13 @@ export default function Leaderboard() {
   return (
     <section className="mb-24">
       <div className="mx-auto max-w-6xl">
-        <div className="relative z-20 h-full overflow-hidden rounded-4xl bg-white shadow-xl px-4">
-          <div className="p-8 text-2xl columns-2 gap-x-24">
+        <div className="relative h-full overflow-hidden rounded-4xl bg-white shadow-xl px-4">
+          <div className="md:px-8 py-8 text-lg md:columns-2 gap-x-24">
             {players.map((player, i) => (
-              <div key={player.name} className="flex items-center gap-x-4 mb-2">
+              <div key={player.name} className="flex items-center gap-x-2 mb-2">
                 <div>
                   <div
-                    className="w-12 aspect-square rounded-full flex justify-center items-center"
+                    className="w-8 aspect-square rounded-full flex justify-center items-center"
                     style={
                       rankingBulletStyleMap[i + 1] ?? defaultRankingBulletStyle
                     }

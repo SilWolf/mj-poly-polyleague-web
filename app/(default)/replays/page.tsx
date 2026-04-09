@@ -36,7 +36,7 @@ export default async function Replays() {
     <>
       <div className="mx-auto max-w-6xl mt-12">
         <h2 className="text-5xl text-[#fff4d6] font-bold mb-6 pl-8">精華</h2>
-        <div className="relative z-20 h-full overflow-hidden rounded-4xl bg-[#fff4d6] shadow-xl px-8 py-8">
+        <div className="relative h-full overflow-hidden rounded-4xl bg-[#fff4d6] shadow-xl px-8 py-8">
           <div className="pb-8">
             <a
               className="flex justify-end items-center gap-x-2 text-2xl text-[#FF0033] hover:underline underline-offset-4"
@@ -46,7 +46,7 @@ export default async function Replays() {
               <Youtube /> 看更多 <ArrowRight />
             </a>
           </div>
-          <div className="grid grid-cols-4 gap-x-4 gap-y-8">
+          <div className="grid md:grid-cols-4 gap-x-4 gap-y-8">
             {replays.map((replay) => (
               <a
                 key={replay.videoId}
