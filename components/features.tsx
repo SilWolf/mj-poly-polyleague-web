@@ -48,7 +48,7 @@ export default function Features() {
               speed of thought.
             </p>
           </div>
-          <div className="flex justify-center pb-4 md:pb-12" data-aos="fade-up">
+          <div className="flex justify-center pb-4 md:pb-12">
             <Image
               className="max-w-none"
               src={FeaturesImage}

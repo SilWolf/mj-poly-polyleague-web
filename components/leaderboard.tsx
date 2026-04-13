@@ -1,35 +1,5 @@
+import { imageUrlBuilder, sanityClient } from "@/sanity";
 import { CSSProperties } from "react";
-
-const players = [
-  {
-    name: "選手一",
-    point: "200.0",
-  },
-  {
-    name: "選手二",
-    point: "150.0",
-  },
-  {
-    name: "選手三",
-    point: "100.0",
-  },
-  {
-    name: "選手四",
-    point: "50.0",
-  },
-  {
-    name: "選手五",
-    point: "200.0",
-  },
-  {
-    name: "選手六",
-    point: "-50.0",
-  },
-  {
-    name: "選手七",
-    point: "-100.0",
-  },
-];
 
 const defaultRankingBulletStyle: CSSProperties = {
   // background: "#ff9247",
@@ -51,14 +21,33 @@ const rankingBulletStyleMap: Record<number, CSSProperties> = {
   },
 };
 
-export default function Leaderboard() {
+export default async function Leaderboard() {
+  const tPlayers = await sanityClient
+    .fetch<
+      {
+        _id: string;
+        player: {
+          name: string;
+          image: string;
+        };
+        stats?: {
+          point: number;
+        };
+      }[]
+    >(
+      `*[_type == "tournament-player" && tournament._ref == "${process.env.TOURNAMENT_ID}"]{_id, player->, stats}`,
+    )
+    .then((items) =>
+      items.sort((a, b) => (b.stats?.point ?? 0) - (a.stats?.point ?? 0)),
+    );
+
   return (
     <section className="mb-24">
       <div className="mx-auto max-w-6xl">
         <div className="relative h-full overflow-hidden rounded-4xl bg-white shadow-xl px-4">
           <div className="md:px-8 py-8 text-lg md:columns-2 gap-x-24">
-            {players.map((player, i) => (
-              <div key={player.name} className="flex items-center gap-x-2 mb-2">
+            {tPlayers.map((tPlayer, i) => (
+              <div key={tPlayer._id} className="flex items-center gap-x-2 mb-2">
                 <div>
                   <div
                     className="w-8 aspect-square rounded-full flex justify-center items-center"
@@ -72,11 +61,21 @@ export default function Leaderboard() {
                 <div className="flex-1 rounded-r-full py-2 flex gap-x-2 items-center">
                   <img
                     className="aspect-square w-12 border border-amber-500 rounded-full"
-                    src={`https://placedog.net/128/128?id=${i + 1}`}
+                    src={
+                      tPlayer.player.image
+                        ? imageUrlBuilder
+                            .image(tPlayer.player.image)
+                            ?.width(192)
+                            .height(192)
+                            .fit("crop")
+                            .crop("top")
+                            .url()
+                        : undefined
+                    }
                   />
-                  <div>{player.name}</div>
+                  <div>{tPlayer.player.name}</div>
                 </div>
-                <div>{player.point}</div>
+                <div>{tPlayer.stats?.point.toFixed(1)}</div>
               </div>
             ))}
           </div>

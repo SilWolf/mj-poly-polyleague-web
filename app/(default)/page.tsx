@@ -16,7 +16,7 @@ export default function Home() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
         <div className="px-4 md:px-12 pt-12 pb-20 text-white text-center space-y-2">
-          <div className="mx-auto max-w-3xl" data-aos="fade-up">
+          <div className="mx-auto max-w-3xl">
             <Image
               className="w-[200px] mx-auto"
               src={Logo}
@@ -26,7 +26,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="text-center" data-aos="fade-up" data-aos-delay={200}>
+          <div className="text-center">
             <Image
               className="w-[520px] mx-auto"
               src={HeroLogo}
@@ -46,4 +46,4 @@ export default function Home() {
   );
 }
 
-export const revalidate = 3600;
+export const revalidate = 21600;
