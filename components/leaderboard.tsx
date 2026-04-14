@@ -32,6 +32,7 @@ export default async function Leaderboard() {
         };
         stats?: {
           point: number;
+          matchCount: number;
         };
       }[]
     >(
@@ -75,7 +76,16 @@ export default async function Leaderboard() {
                   />
                   <div>{tPlayer.player.name}</div>
                 </div>
-                <div>{tPlayer.stats?.point.toFixed(1)}</div>
+                {tPlayer.stats && (
+                  <div className="text-right">
+                    <p className="font-bold">
+                      {tPlayer.stats.point.toFixed(1)}
+                    </p>
+                    <p className="text-sm text-neutral-600">
+                      {tPlayer.stats.matchCount} 半莊
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

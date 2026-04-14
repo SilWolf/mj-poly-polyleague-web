@@ -107,13 +107,13 @@ export default function Header() {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <a
+                <Link
                   className="block px-4 py-4 hover:text-amber-500 hover:underline underline-offset-4"
                   href="https://mahjong-poly.mystrikingly.com/"
                   target="_blank"
                 >
                   聯絡麻雀理工 <BoxArrowUpRight className="inline" />
-                </a>
+                </Link>
               </MenuItem>
             </MenuItems>
           </Menu>
